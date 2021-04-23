@@ -35,6 +35,7 @@
       :group="group"
       :sorting="sorting"
       @create-trust="createTrust"
+      @revoke-trust="revokeTrust"
     />
   </QCard>
 </template>
@@ -80,6 +81,7 @@ export default {
   methods: {
     ...mapActions({
       createTrust: 'currentGroup/trustUser',
+      revokeTrust: 'currentGroup/revokeTrust',
     }),
     toggleSorting () {
       if (this.sorting === 'joinDate') {
